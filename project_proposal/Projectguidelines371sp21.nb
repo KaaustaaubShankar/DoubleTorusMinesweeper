@@ -1,0 +1,681 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33036,        673]
+NotebookOptionsPosition[     30363,        631]
+NotebookOutlinePosition[     30759,        647]
+CellTagsIndexPosition[     30716,        644]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Cs/Math 371 Ernst/Ziegler\tProject Description \tSpring 2021
+\
+\>", "Section",
+ CellChangeTimes->{{3.571673533466316*^9, 3.571673552078235*^9}, {
+   3.603153173670656*^9, 3.603153175230746*^9}, {3.6344409720240655`*^9, 
+   3.634440972224066*^9}, {3.6971963816442757`*^9, 3.697196386694381*^9}, {
+   3.7289909686721153`*^9, 3.7289909717654953`*^9}, {3.761260664446905*^9, 
+   3.761260664776924*^9}, {3.7926314054822273`*^9, 3.792631405776219*^9}, 
+   3.823539081431491*^9},
+ TextAlignment->Center,ExpressionUUID->"8d979eb4-d264-4e5a-801f-7e6418a9a189"],
+
+Cell[TextData[{
+ "You will be involved with the project for a long time and it counts for 40 \
+% of your grade. So this is a long document outlining important information \
+you need to know.  ",
+ StyleBox["Read it carefully!",
+  FontWeight->"Bold"],
+ " Read it carelessly (nor not at all) at your own peril. \n\nThe second half \
+of the course is devoted to a major project. The project will involve much of \
+the methods and tools developed throughout the course. You should look for \
+one partner and a topic for your project.  (It will be possible for you to \
+select ",
+ StyleBox["a partner in a different class taught by the same instructors ",
+  FontWeight->"Bold"],
+ "- but only (!) if it is possible for both of you to attend 371 classes at \
+the same time during the project period!) Each group will work on a different \
+project and topics will be selected through consultation with the \
+instructors. \n\nWe would like you to come up with an idea for a project you \
+like to work on. It might be related to research you are engaged in or some \
+other interests you have. Now is the time when you need to get serious about \
+the topic of your project. "
+}], "Text",
+ CellChangeTimes->{{3.5716735609556923`*^9, 3.571673580658619*^9}, {
+   3.5716737147454786`*^9, 3.5716737556021404`*^9}, {3.571704255961664*^9, 
+   3.571704262634986*^9}, 3.571705578353454*^9, 3.60315320607351*^9, {
+   3.697804735751504*^9, 3.697804743610318*^9}, 
+   3.697981072291197*^9},ExpressionUUID->"a08be1fe-6000-40ae-9b8e-\
+e43980e6989e"],
+
+Cell[TextData[StyleBox["Timeline",
+ FontFamily->"Times New Roman",
+ FontSize->14,
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.5716735993319387`*^9, 3.5716736020619555`*^9}},
+ TextAlignment->Center,ExpressionUUID->"7fa09a6f-b0ef-4e27-bbbe-5a3de8dd4391"],
+
+Cell[TextData[{
+ StyleBox["\nMar 5 Homework 6 is due\nWeek of March 6 -14 ",
+  FontWeight->"Bold"],
+ " Start work on your project proposal.  This includes determining whether \
+what you want to do is ",
+ StyleBox["feasible",
+  FontWeight->"Bold"],
+ " using Mathematica. We will allocate some class time for you to discuss \
+your ideas with us. \n",
+ StyleBox["March 10: Preliminary project discussion via zoom.",
+  FontWeight->"Bold"],
+ " If you give us a draft or your proposal prior to that, we can also give \
+you feedback on it. \n",
+ StyleBox["Mar 12: In person face-to-face class",
+  FontWeight->"Bold"],
+ "\n",
+ StyleBox["Weeks Wed of March 15 - March 21:",
+  FontWeight->"Bold"],
+ " Continue work on the project. \n\t",
+ StyleBox["Turn in a final proposal description by Monday Mar 15",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[". \n",
+  FontColor->RGBColor[0, 0, 1]],
+ "We will return this proposal either on Mar 17  or at the latest by Friday \
+March 19th. If we approved of you project then your project topic is now \
+fixed and ",
+ StyleBox["cannot",
+  FontWeight->"Bold"],
+ " be changed any longer. It might happen that your topic turns out to be too \
+difficult and needs to be adjusted a bit to make the project workable. This \
+can to be done - but only in consultation with and with the approval of one \
+of us.\n",
+ StyleBox["Week of March 22 -March 28",
+  FontWeight->"Bold"],
+ ": Continue work on the project\n\t",
+ StyleBox["Friday, March 26: Turn in first written progress report",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ " ",
+ StyleBox["\nWeek of March 29 - April 4th ",
+  FontWeight->"Bold"],
+ ": Continue work on the project.\n",
+ StyleBox["Week of April 5 - 11",
+  FontWeight->"Bold"],
+ ": Continue work on the project. \n\t",
+ StyleBox["April 5 & 7: Make a brief presentation about your project",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ " to the whole class; for each group this should last between 5 - 10 \
+minutes.\n",
+ StyleBox["Week of April 12 - 18",
+  FontWeight->"Bold"],
+ " :  Continue work on the project. \n\t",
+ StyleBox["Monday, April 12: Turn in a second written progress report. ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ "\nDuring this week we will decide on the final presentation schedule.",
+ StyleBox["\n",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Week April 19 - 25  ",
+  FontWeight->"Bold"],
+ ": Continue work on the project. Final project presentations will start. \
+Group member must equally share in the presentation. \n",
+ StyleBox["Week April 26-31",
+  FontWeight->"Bold"],
+ ": Finals week - we have three final slots for project presentations. Group \
+member must equally share in the presentation. \n",
+ StyleBox["\tTuesday, April 28: Turn in final project report. As part of the \
+final report you will need to turn in a short abstract to Derick Strode.",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ "\n\nNote that this time includes finals week and the final time assigned to \
+this class will be used as presentation time in addition to the last week of \
+classes. We count on about 20 - 25 minutes for each presentation giving us \
+time for 15 - 18 project presentations (for all CPS classes) during finals \
+week and the remaining presentations will be during class time during the \
+last week of classes.",
+ StyleBox[" Attendance for all presentations in your section - including the \
+final time slot - is mandatory",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ ". Please also remember the following sentence from the syllabus: ",
+ StyleBox["No credit will be given for project proposals or progress reports \
+which are more than one day late.",
+  FontWeight->"Bold"],
+ "\n\nThe meeting times for the project presentations during finals week are:\
+\nApril 26   10:30 am -12:30 am  (time slot for 1:50 class)\nApril 27  10:30 \
+am -12:30 am (time slot for 11:30 class)\nApril 29  8:00 am - 10:00 am (time \
+slot for 9:10 class)"
+}], "Text",
+ CellChangeTimes->{{3.5716735920154915`*^9, 3.5716735944023066`*^9}, {
+   3.571673654495892*^9, 3.571673688802512*^9}, {3.5716737233411336`*^9, 
+   3.5716738471913276`*^9}, {3.571673881573948*^9, 3.571673884038764*^9}, {
+   3.571673934629888*^9, 3.571674271762892*^9}, {3.571674318659197*^9, 
+   3.5716743334966536`*^9}, {3.571674389018589*^9, 3.5716744931552596`*^9}, {
+   3.571674531751649*^9, 3.5716746115632954`*^9}, {3.57167637059908*^9, 
+   3.5716763747018805`*^9}, 3.571681132644318*^9, {3.603149575346844*^9, 
+   3.603149639381507*^9}, {3.6031496886143227`*^9, 3.603149716468916*^9}, {
+   3.6031497709690332`*^9, 3.60314993840661*^9}, {3.603150165261585*^9, 
+   3.603150180391451*^9}, {3.6031505199338713`*^9, 3.603150564641429*^9}, {
+   3.6031519960553007`*^9, 3.6031520044387803`*^9}, {3.6031522502238383`*^9, 
+   3.60315226860889*^9}, {3.603152313823476*^9, 3.6031523489674864`*^9}, {
+   3.6031527960420575`*^9, 3.6031528178783064`*^9}, {3.6031533083393593`*^9, 
+   3.6031533117845564`*^9}, {3.603153347987627*^9, 3.6031533624494543`*^9}, {
+   3.6031534097721605`*^9, 3.6031534101921844`*^9}, {3.603153440475917*^9, 
+   3.603153443389084*^9}, {3.697204202022393*^9, 3.6972042363013935`*^9}, {
+   3.6972042854143934`*^9, 3.6972043045583935`*^9}, {3.697204463040413*^9, 
+   3.6972044815711184`*^9}, {3.6972045380274067`*^9, 
+   3.6972045431654344`*^9}, {3.697204573534507*^9, 3.697204617627324*^9}, {
+   3.697204678028396*^9, 3.6972047620297956`*^9}, {3.697204793656958*^9, 
+   3.6972048943560266`*^9}, {3.6972049359861894`*^9, 
+   3.6972049411607065`*^9}, {3.6978045673411694`*^9, 3.697804599652462*^9}, {
+   3.697804630411193*^9, 3.697804659535858*^9}, {3.6978047899566727`*^9, 
+   3.6978048161467204`*^9}, {3.7289911399590816`*^9, 
+   3.7289912198794537`*^9}, {3.728991281142888*^9, 3.728991363525609*^9}, {
+   3.7289914152707834`*^9, 3.728991415450801*^9}, {3.7289914622713785`*^9, 
+   3.728991515576577*^9}, {3.7289915639284782`*^9, 3.7289915805234737`*^9}, {
+   3.728991708245138*^9, 3.7289917186767635`*^9}, {3.7289918622032757`*^9, 
+   3.7289918623632793`*^9}, {3.7289919294666224`*^9, 
+   3.7289919947739296`*^9}, {3.7612608891464972`*^9, 
+   3.7612610226638904`*^9}, {3.761261105346139*^9, 3.7612612089807377`*^9}, {
+   3.761261267163227*^9, 3.7612613007404094`*^9}, {3.7612614419800797`*^9, 
+   3.7612614788047476`*^9}, 3.7612615284802465`*^9, {3.761261575462143*^9, 
+   3.7612616633150396`*^9}, {3.7612618842599635`*^9, 3.7612619581648264`*^9}, 
+   3.761262047417164*^9, {3.792631451070047*^9, 3.792631511806737*^9}, 
+   3.792631573964254*^9, {3.792631613128964*^9, 3.7926319226635523`*^9}, {
+   3.792631974697503*^9, 3.792632180712758*^9}, {3.7926322143705263`*^9, 
+   3.7926323106045732`*^9}, {3.792632342909412*^9, 3.792632363486775*^9}, {
+   3.7926323943371277`*^9, 3.7926324560181704`*^9}, {3.792632494250252*^9, 
+   3.7926325156306458`*^9}, {3.792632589719777*^9, 3.7926326432716618`*^9}, {
+   3.792633615958023*^9, 3.792633646831847*^9}, {3.823539143828081*^9, 
+   3.823539144140192*^9}, {3.823539179740306*^9, 3.8235393714644547`*^9}, {
+   3.8235394044422827`*^9, 3.823539526478754*^9}, {3.823540000962369*^9, 
+   3.8235401169975147`*^9}, {3.8235401884949217`*^9, 3.823540188934988*^9}, {
+   3.823540254472458*^9, 3.823540287696952*^9}, {3.82354043052943*^9, 
+   3.823540443871031*^9}, {3.823599230950512*^9, 
+   3.8235992348116875`*^9}},ExpressionUUID->"58f8583f-249d-442e-80b4-\
+5db47400aa72"],
+
+Cell[TextData[{
+ StyleBox["Expectations",
+  FontWeight->"Bold"],
+ ": Some of the class meetings (not all) will be dedicated to working on the \
+project. We expect you :"
+}], "Text",
+ CellChangeTimes->{{3.5716748662508883`*^9, 3.5716748778106365`*^9}, 
+   3.603153460203045*^9},ExpressionUUID->"817a12d0-401d-4d33-be20-\
+156334c83d23"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+to work efficiently on the project inside and outside of class; class time \
+alone will not be enough; \
+\>", "Item",
+ CellChangeTimes->{{3.57167481021197*^9, 3.571674820150297*^9}, {
+   3.571674861071622*^9, 3.5716748650184727`*^9}, {3.5717045601344643`*^9, 
+   3.571704560138014*^9}, 
+   3.571706993472501*^9},ExpressionUUID->"02b6ec09-d074-42e8-87c3-\
+85f98cbe808a"],
+
+Cell["\<\
+to work on the project steadily. Projects that were successful have one thing \
+in common: Time was used efficiently - if you waste the first three weeks \
+then that time is gone - you cannot make up for having wasted it. A good \
+project is the result of repeatedly getting something done and taking the \
+time to think what makes sense to do next. That cannot be accomplished by you \
+pulling a few all-night work sessions because you wasted the early weeks;\
+\>", "Item",
+ CellChangeTimes->{{3.5717045608858843`*^9, 3.571704711419179*^9}, {
+  3.571706990893786*^9, 3.571707030728578*^9}, {3.5717427510139785`*^9, 
+  3.5717427524340067`*^9}, {3.5717432782851114`*^9, 3.5717433417594585`*^9}, {
+  3.571743396691951*^9, 3.5717434870515947`*^9}, {3.697809889509742*^9, 
+  3.697809892970638*^9}},ExpressionUUID->"64648d02-afb8-4309-981d-\
+852400f44a5e"],
+
+Cell["\<\
+to come to class ready to work on the project, with your notes, written code, \
+and collected research (whatever you need to make progress);\
+\>", "Item",
+ CellChangeTimes->{{3.5716748257975693`*^9, 
+  3.5716748323048534`*^9}},ExpressionUUID->"eca78d4c-e2d0-46b3-bc46-\
+e113ee85a326"],
+
+Cell["\<\
+to test each of your code pieces before you put them together; keep those \
+tests and information about the correct results- since you might have to use \
+them again once you change the function;\
+\>", "Item",
+ CellChangeTimes->{{3.5716748330224624`*^9, 3.571674837343718*^9}, {
+   3.571675529036515*^9, 3.5716755606267176`*^9}, 3.5716755914243155`*^9, {
+   3.5716761190324802`*^9, 
+   3.57167611931328*^9}},ExpressionUUID->"b21af2b2-62b5-409a-b67d-\
+b89a9ee55d0c"],
+
+Cell["\<\
+to come to us with questions when you are stuck; do not later tell us you \
+couldn\[CloseCurlyQuote]t solve a problem, or something cannot be done in \
+Mathematica if you never talked to us about it; I haven\[CloseCurlyQuote]t \
+come across a problem related to a CPS project which has no solution; while \
+talking to seniors or tutors might be helpful, it does not release you from \
+this expectation;\
+\>", "Item",
+ CellChangeTimes->{{3.5716748375777206`*^9, 3.571674842398183*^9}, {
+   3.571675581687853*^9, 3.5716756354341974`*^9}, {3.57167580268487*^9, 
+   3.571675825180214*^9}, {3.5716759166290007`*^9, 3.571675957236061*^9}, {
+   3.5716759998097334`*^9, 3.5716760096075964`*^9}, {3.571676068562375*^9, 
+   3.57167611265008*^9}, {3.571743532398409*^9, 3.571743532398409*^9}, {
+   3.697804882191212*^9, 3.697804952444712*^9}, 
+   3.697809882868687*^9},ExpressionUUID->"9189ba0e-12cd-4989-a603-\
+6d674496b086"],
+
+Cell["\<\
+to have ALL project work/code on BOTH computers at (almost) all times;\
+\>", "Item",
+ CellChangeTimes->{{3.57174353441949*^9, 3.5717435777282224`*^9}, {
+  3.5717436630016336`*^9, 3.5717436647717047`*^9}, {3.697804963454212*^9, 
+  3.6978049855787125`*^9}},ExpressionUUID->"4b706f9b-b8bf-47ff-b7fd-\
+31f7488230ec"],
+
+Cell["\<\
+to backup your work repeatedly \
+\[OpenCurlyQuote]off-computer\[CloseCurlyQuote], so that you don\
+\[CloseCurlyQuote]t have to start from scratch if the computer crashes or \
+your file gets corrupted; \
+\>", "Item",
+ CellChangeTimes->{{3.5717438691344943`*^9, 3.5717438831369143`*^9}, {
+  3.6031535187923965`*^9, 3.6031535195424395`*^9}, {3.761262114609847*^9, 
+  3.7612621409103513`*^9}},ExpressionUUID->"27770e26-8dd4-4452-adfe-\
+49f950c30fa7"],
+
+Cell["\<\
+to use an Internet based method to share project files among partners (e.g. \
+dropbox)\
+\>", "Item",
+ CellChangeTimes->{
+  3.5716748426165857`*^9, 3.5716811415675755`*^9, {3.5717438136168284`*^9, 
+   3.571743814156845*^9}, {3.603153531827142*^9, 
+   3.6031535352483377`*^9}},ExpressionUUID->"5c14af8b-2e9e-4854-af9d-\
+801da50d4205"]
+}, Open  ]],
+
+Cell["\<\
+We will address general questions you have in class, and give you feedback, \
+but we do not have time to help you ' debug' your program in class. For that \
+you need to make an appointment. Please realize that successful projects are \
+complicated and while you will understand all the different parts of your \
+project and how they work together, we do not by merely looking at the code \
+for a few minutes.  In the later stages of the project  it will sometimes \
+take 10-20 minutes of Q & A to identify the underlying cause for the problem. \
+Once we (= you and Claus or Uta) understand the cause, we can discuss with \
+you possible approaches for how to fix it. We do want you to come to us with \
+your problems - we just need you to be realistic.\
+\>", "Text",
+ CellChangeTimes->{{3.571674886016342*^9, 3.5716748884655733`*^9}, 
+   3.5716757950866213`*^9, {3.571704729186831*^9, 3.571704807893077*^9}, 
+   3.571705601699174*^9, {3.5717439262332087`*^9, 3.5717439434957266`*^9}, {
+   3.571743993034213*^9, 3.571744067296074*^9}, {3.571744112811985*^9, 
+   3.571744295073946*^9}, {3.571744334445221*^9, 3.571744348504534*^9}, {
+   3.571744384394226*^9, 3.5717443863939867`*^9}, {3.5717444321005015`*^9, 
+   3.5717445429892783`*^9}, {3.571744578721849*^9, 3.571744711357544*^9}, {
+   3.571744742489299*^9, 3.571744743269268*^9}, 3.5717447779225864`*^9, {
+   3.697805025605712*^9, 3.697805041812712*^9}, 3.697807601704794*^9, {
+   3.7612621803907623`*^9, 
+   3.761262183343771*^9}},ExpressionUUID->"673fb0fe-476f-4bf7-8fe9-\
+17feb41e1ea6"],
+
+Cell[TextData[{
+ StyleBox["Grading",
+  FontSize->14,
+  FontWeight->"Bold"],
+ "\nYou will be graded on the required communication regarding the project \
+throughout the project period - starting with the proposal and including the \
+progress reports. \n10 % proposal description due March 15\n10 % first \
+progress report due March 26\n10 % second progress report due April 12\n5 % \
+brief project presentation (April 5 & 7)\n20 % final project presentation \n\
+45 % final project report (this includes the written report as well as the \
+code you produced for the project).\n\nThe final project report will be \
+graded using the following criteria.\n\t\[Bullet] Progress, overcoming \
+obstacles, and project completion\n\t\[Bullet] Difficulty of the project\n\t\
+\[Bullet] Quality of the general solution: Design/Organization\n\t\[Bullet] \
+Quality of the specific solution: Implementation (including internal \
+documentation, modularity, readability of code, etc.)\n\t\[Bullet] \
+Documentation provided with the solution\n\nNote: You must use complete \
+sentences for any written work you have to turn in and write it such that \
+other students in the class who do not know about your project can understand \
+it. We expect you to use ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " to write the proposal and progress/project reports.\n\nIf you (plan to) \
+use code written elsewhere (that is, code not written by you and/or your \
+partner for the project), you must make this clear in your project \
+description. Regardless of whether you include external code, your work for \
+the project must include significant code you developed on your own. "
+}], "Text",
+ CellChangeTimes->{{3.57167614336848*^9, 3.57167615240088*^9}, {
+   3.5716761908704805`*^9, 3.57167634309528*^9}, {3.5716763919087243`*^9, 
+   3.5716763922207265`*^9}, {3.5716764254801397`*^9, 3.571676448474687*^9}, {
+   3.571676481858901*^9, 3.571676497412201*^9}, {3.5716768077637963`*^9, 
+   3.5716768688225875`*^9}, {3.571704831038035*^9, 3.5717048731597157`*^9}, 
+   3.571705606365738*^9, {3.603153588895406*^9, 3.603153598477954*^9}, {
+   3.6031536531750827`*^9, 3.603153655833235*^9}, {3.6978050686007123`*^9, 
+   3.697805134431952*^9}, {3.69780718192315*^9, 3.6978071862314777`*^9}, {
+   3.728992014558326*^9, 3.728992021238459*^9}, {3.7612622081675367`*^9, 
+   3.761262215332946*^9}, {3.7926326886245003`*^9, 3.7926327124187107`*^9}, {
+   3.823540317385935*^9, 
+   3.823540395059578*^9}},ExpressionUUID->"78090fb4-ce16-4ce1-ad96-\
+53d4ddb522ab"],
+
+Cell[TextData[StyleBox["Project proposal requirements",
+ FontSize->14,
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.5716765254807816`*^9, 3.5716765297240086`*^9}},
+ TextAlignment->Center,ExpressionUUID->"a6031781-e4da-47b8-b2d3-45f1313afe61"],
+
+Cell[TextData[{
+ "The project development must ",
+ StyleBox["follow an ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["incremental approach",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ", that is, you should be able to develop a running simple version of your \
+project and then add to it as time and progress permits. This is better than \
+not having anything running until the very end (or even later). You need to \
+consider this when selecting your project topic and include this in your \
+project proposal. \n        \n1) Short project description\n      Provide a \
+short 2 - 3 sentence description of your project which describe the topic and \
+scope of your project. \n2) Describe the",
+ StyleBox[" final product you plan to turn in",
+  FontWeight->"Bold"],
+ ". Describe ",
+ StyleBox["what",
+  FontWeight->"Bold"],
+ " your project will actually do (not how). This description must include \
+among other details : \n\ta. What can be seen on the screen? This must \
+include several diagrams to support your explanation (the diagrams may be \
+drawn by hand for the proposal)\n\tb. How does the user influence what \
+happens or how does the user interact with the project?\nIn other words, we \
+want to hear WHAT your project does, how it looks to a user. At this point we \
+are not interested in how that' s accomplished. However, you should spend \
+time to see whether what you propose is feasible. Because once your topic is \
+approved you are stuck with making it work.\nIf you plan to start with/use \
+existing software, you must include a short description of what the software \
+does and a link to it. \n3) An outline of what the ",
+ StyleBox["first increment",
+  FontWeight->"Bold"],
+ " of the project includes and then at least",
+ StyleBox[" two more increments",
+  FontWeight->"Bold"],
+ ". Make sure that you allow for enough difficulty in the project, since that \
+affects the grading. \n\nIf these proposal requirements do not fit what you \
+want to do for your project, talk to us for an idea of how we suggest you \
+should proceed. Maybe providing and explaining several diagrams of what can \
+be seen on screen might help you develop details."
+}], "Text",
+ CellChangeTimes->{{3.5716765127510996`*^9, 3.571676522516762*^9}, {
+   3.5716766092905188`*^9, 3.571676642369536*^9}, {3.5716766821663914`*^9, 
+   3.571676794549512*^9}, {3.5716768940167494`*^9, 3.5716770126047153`*^9}, {
+   3.5716770448355217`*^9, 3.571677077003928*^9}, {3.5716771074739237`*^9, 
+   3.5716771907784576`*^9}, {3.571704974627037*^9, 3.571705011668179*^9}, 
+   3.6031536796785984`*^9, {3.6055850324539795`*^9, 3.6055851181948833`*^9}, {
+   3.761262271639676*^9, 3.761262272069677*^9}, {3.761262304855399*^9, 
+   3.7612623383413143`*^9}, {3.8235994827938366`*^9, 
+   3.8235994940109973`*^9}, {3.823599525010954*^9, 3.823599538160939*^9}, {
+   3.8235998339207354`*^9, 
+   3.8235998370506*^9}},ExpressionUUID->"6cc7b4f4-544e-400b-b3ae-\
+4bd360bb8bc7"],
+
+Cell[TextData[{
+ StyleBox["Games as projects?",
+  FontWeight->"Bold"],
+ " We want to curb the use of games for projects a bit this year. This does \
+not mean that games are not acceptable, but you need to convince us that your \
+game contains enough aspects which make it suitable for a project in a \
+300-level honors course related to computational problem-solving. You can do \
+that by addressing the different types of computational/problem-solving tasks \
+which must be solved. (Also read again the comments about games in the \
+\[OpenCurlyQuote]Good project selection\[CloseCurlyQuote] document on \
+blackboard.)"
+}], "Text",
+ CellChangeTimes->{{3.5716772020261297`*^9, 3.5716772250674777`*^9}, 
+   3.603153793859129*^9, {3.697807255092724*^9, 3.697807261388472*^9}, {
+   3.7612623843246546`*^9, 
+   3.7612624209888773`*^9}},ExpressionUUID->"35c61447-7fcd-4826-bc4a-\
+a735d4a29a38"],
+
+Cell[TextData[{
+ StyleBox["Database access as projects?",
+  FontWeight->"Bold"],
+ " In the past students suggested projects which allow a user to search \
+through  <some data items>  based on <some criteria> and which display the \
+<data items which match the criteria>.  The information about the  <data \
+items> is usually saved in files created by the students working on the \
+project. It turns out that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " has some powerful functions to do the search if it involves text, and \
+students often struggled with finding good increments for their projects. So \
+if you are interested in something like that ",
+ StyleBox["you must be creative and add various interactions the user might \
+have with the displayed items",
+  FontWeight->"Bold"],
+ " (other than looking, reading, and listening). Furthermore, you should not \
+need to spend a considerable amount of time collecting data (that is not \
+\[OpenCurlyQuote]computationally challenging\[CloseCurlyQuote]).\n\n",
+ StyleBox["Research as projects?",
+  FontWeight->"Bold"],
+ " If you are engaged in student research with a faculty member then ask \
+her/him if there is something (useful to the research project) that can be \
+done with ",
+ StyleBox["Mathematica.",
+  FontSlant->"Italic"],
+ " We encourage you to pursue this avenue! \nHowever there are several \
+stipulations:\n- The faculty mentor needs to agree to guide and help you, \
+this does not mean the faculty mentor needs to understand ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " - but she/he needs to give you feedback and guidance on what you are \
+doing. We do not know the different areas of research and cannot help with \
+questions were expertise in the research area is required. We can only \
+provide expertise that is directly related to coding. \n- If the faculty \
+mentor provides you with code to get started you need to disclose that and \
+clearly state what was given to you. Remember your project must contain \
+something you develop on your own.\n- If your faculty mentor has questions \
+about this, tell us and we will talk to the faculty member.",
+ StyleBox["\n",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.5716772020261297`*^9, 3.5716772475482216`*^9}, {
+   3.5716772836468534`*^9, 3.5716774083112526`*^9}, 3.5716774488247128`*^9, {
+   3.5716775057650776`*^9, 3.571677718088439*^9}, 3.5716811481196175`*^9, {
+   3.5717050671787043`*^9, 3.571705501693078*^9}, {3.57170561380882*^9, 
+   3.5717056225042048`*^9}, 3.571707079137022*^9, {3.571707115899591*^9, 
+   3.571707141684608*^9}, 3.571744759330772*^9, {3.603153820674663*^9, 
+   3.603153824502882*^9}, {3.761262439119914*^9, 
+   3.7612624830570993`*^9}},ExpressionUUID->"3ec69e69-2b63-4c26-a3aa-\
+9743cecd458b"],
+
+Cell["First and second written progress report", "Text",
+ CellChangeTimes->{{3.571677791383312*^9, 3.571677807889218*^9}, {
+  3.5716781481278005`*^9, 3.5716781489546056`*^9}},
+ TextAlignment->Center,
+ FontSize->14,
+ FontWeight->"Bold",ExpressionUUID->"2e65ef95-48a9-43bb-a8b8-185e0dc1c8db"],
+
+Cell[TextData[{
+ "A progress report is not meant to report final results, but to show that \
+you have ",
+ StyleBox["tenaciously and resourcefully",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ " worked on issues important to complete the project successfully. \n\n\
+Additionally documents are posted about progress report requirements - they \
+are still in draft form, but should give you a good idea of what you have to \
+work towards.   Here is just the tentative list of components to be included."
+}], "Text",
+ CellChangeTimes->{{3.5716777781700273`*^9, 3.571677986450963*^9}, {
+  3.5716780180411654`*^9, 3.5716780327676597`*^9}, {3.5716797178330917`*^9, 
+  3.571679720859511*^9}, {3.5716807620528965`*^9, 3.571680862689787*^9}, {
+  3.5716810809289856`*^9, 3.5716811098369718`*^9}, {3.6031542337592897`*^9, 
+  3.6031542359664164`*^9}, {3.761262546789944*^9, 3.761262564532996*^9}, {
+  3.7612627149791827`*^9, 3.7612627229826403`*^9}, {3.7612629073128304`*^9, 
+  3.7612629385082307`*^9}},ExpressionUUID->"1cf1619c-c12e-4425-ad31-\
+3f2cefb7e93b"],
+
+Cell[TextData[StyleBox["First written progress report - requirements",
+ FontSize->14,
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.571678116662399*^9, 3.571678120890026*^9}, {
+  3.5716813400186663`*^9, 3.571681351235138*^9}},
+ TextAlignment->Center,ExpressionUUID->"52339046-9568-4c89-b959-059ad18030dc"],
+
+Cell[TextData[{
+ "1)",
+ StyleBox[" Proposal of your approved project (",
+  FontWeight->"Bold"],
+ "not the graded project, not attached, but as the first item in the document \
+you turn as for the  first progress report)\n2) A ",
+ StyleBox["schedule of future work\n",
+  FontWeight->"Bold"],
+ "3) A ",
+ StyleBox["description of what you have done ",
+  FontWeight->"Bold"],
+ "(code required)\n4) A list of ",
+ StyleBox["unresolved issues ",
+  FontWeight->"Bold"],
+ "(with code if you tried to write code)",
+ StyleBox["\n",
+  FontWeight->"Bold"],
+ "5) An ",
+ StyleBox["explanation of how to get your code to run\n",
+  FontWeight->"Bold"],
+ "6) A ",
+ StyleBox["signed statement",
+  FontWeight->"Bold"],
+ " from each group member"
+}], "Text",
+ CellChangeTimes->{{3.5716808786497917`*^9, 3.5716809570613976`*^9}, {
+  3.6978073197936363`*^9, 
+  3.6978073842280593`*^9}},ExpressionUUID->"baaf0435-8c32-4e73-b6fb-\
+217ea4502e9d"],
+
+Cell[TextData[StyleBox["Second written progress report - requirements",
+ FontSize->14,
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.571678116662399*^9, 3.571678120890026*^9}, {
+  3.571680874874543*^9, 3.571680875919757*^9}, {3.571681353325551*^9, 
+  3.5716813563519707`*^9}},
+ TextAlignment->Center,ExpressionUUID->"c1e6732b-dec9-4c77-add6-96b406e7f2f8"],
+
+Cell[TextData[{
+ "1) An",
+ StyleBox[" explanation of how to get your code to run",
+  FontWeight->"Bold"],
+ " \n2)",
+ StyleBox[" Proposal of your approved project (",
+  FontWeight->"Bold"],
+ "not the graded project, not attached, but as the first item in the document \
+you turn as for the  first progress report)\n3) ",
+ StyleBox["Update of the schedule of future work\n",
+  FontWeight->"Bold"],
+ "4) A ",
+ StyleBox["explanation of  algorithms/formulas which are the result of \
+research & development",
+  FontWeight->"Bold"],
+ " (only for research-based projects)",
+ StyleBox["\n",
+  FontWeight->"Bold"],
+ "5) A description of ",
+ StyleBox["any files and/or file structure",
+  FontWeight->"Bold"],
+ " your project uses.\n6) A description of",
+ StyleBox[" any major data structures (lists, etc) ",
+  FontWeight->"Bold"],
+ "your project uses.",
+ StyleBox["\n",
+  FontWeight->"Bold"],
+ "7) An",
+ StyleBox[" overview of how your code approaches the problem",
+  FontWeight->"Bold"],
+ " (not your path in finding a solution; think about it as a high-level \
+flowchart)",
+ StyleBox["\n",
+  FontWeight->"Bold"],
+ "8) A ",
+ StyleBox["description of what you have accomplished\n",
+  FontWeight->"Bold"],
+ "9) A ",
+ StyleBox["signed statement",
+  FontWeight->"Bold"],
+ " from each group member "
+}], "Text",
+ CellChangeTimes->{{3.5716808786497917`*^9, 3.5716810491201773`*^9}, {
+   3.5716817151466713`*^9, 3.5716817337887907`*^9}, 3.571743794543256*^9, {
+   3.697807390228819*^9, 3.6978074705297937`*^9}, {3.761263199351991*^9, 
+   3.7612632260615187`*^9}},ExpressionUUID->"21a426d0-c09f-42dc-a921-\
+b3d4014c4c37"]
+}, Open  ]]
+},
+WindowSize->{949, 467},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c930313e-1dee-4b38-852f-8a0cc93aaaa4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 561, 10, 105, "Section",ExpressionUUID->"8d979eb4-d264-4e5a-801f-7e6418a9a189"],
+Cell[1144, 34, 1523, 26, 254, "Text",ExpressionUUID->"a08be1fe-6000-40ae-9b8e-e43980e6989e"],
+Cell[2670, 62, 261, 5, 31, "Text",ExpressionUUID->"7fa09a6f-b0ef-4e27-bbbe-5a3de8dd4391"],
+Cell[2934, 69, 7446, 139, 848, "Text",ExpressionUUID->"58f8583f-249d-442e-80b4-5db47400aa72"],
+Cell[10383, 210, 334, 8, 35, "Text",ExpressionUUID->"817a12d0-401d-4d33-be20-156334c83d23"],
+Cell[CellGroupData[{
+Cell[10742, 222, 379, 8, 32, "Item",ExpressionUUID->"02b6ec09-d074-42e8-87c3-85f98cbe808a"],
+Cell[11124, 232, 861, 13, 74, "Item",ExpressionUUID->"64648d02-afb8-4309-981d-852400f44a5e"],
+Cell[11988, 247, 294, 6, 32, "Item",ExpressionUUID->"eca78d4c-e2d0-46b3-bc46-e113ee85a326"],
+Cell[12285, 255, 475, 9, 53, "Item",ExpressionUUID->"b21af2b2-62b5-409a-b67d-b89a9ee55d0c"],
+Cell[12763, 266, 925, 15, 74, "Item",ExpressionUUID->"9189ba0e-12cd-4989-a603-6d674496b086"],
+Cell[13691, 283, 322, 6, 32, "Item",ExpressionUUID->"4b706f9b-b8bf-47ff-b7fd-31f7488230ec"],
+Cell[14016, 291, 456, 9, 32, "Item",ExpressionUUID->"27770e26-8dd4-4452-adfe-49f950c30fa7"],
+Cell[14475, 302, 342, 8, 32, "Item",ExpressionUUID->"5c14af8b-2e9e-4854-af9d-801da50d4205"]
+}, Open  ]],
+Cell[14832, 313, 1550, 23, 127, "Text",ExpressionUUID->"673fb0fe-476f-4bf7-8fe9-17feb41e1ea6"],
+Cell[16385, 338, 2524, 40, 516, "Text",ExpressionUUID->"78090fb4-ce16-4ce1-ad96-53d4ddb522ab"],
+Cell[18912, 380, 250, 4, 33, "Text",ExpressionUUID->"a6031781-e4da-47b8-b2d3-45f1313afe61"],
+Cell[19165, 386, 2952, 52, 403, "Text",ExpressionUUID->"6cc7b4f4-544e-400b-b3ae-4bd360bb8bc7"],
+Cell[22120, 440, 888, 16, 104, "Text",ExpressionUUID->"35c61447-7fcd-4826-bc4a-a735d4a29a38"],
+Cell[23011, 458, 2771, 50, 403, "Text",ExpressionUUID->"3ec69e69-2b63-4c26-a3aa-9743cecd458b"],
+Cell[25785, 510, 290, 5, 33, "Text",ExpressionUUID->"2e65ef95-48a9-43bb-a8b8-185e0dc1c8db"],
+Cell[26078, 517, 1059, 18, 127, "Text",ExpressionUUID->"1cf1619c-c12e-4425-ad31-3f2cefb7e93b"],
+Cell[27140, 537, 312, 5, 33, "Text",ExpressionUUID->"52339046-9568-4c89-b959-059ad18030dc"],
+Cell[27455, 544, 920, 28, 150, "Text",ExpressionUUID->"baaf0435-8c32-4e73-b6fb-217ea4502e9d"],
+Cell[28378, 574, 362, 6, 33, "Text",ExpressionUUID->"c1e6732b-dec9-4c77-add6-96b406e7f2f8"],
+Cell[28743, 582, 1604, 46, 219, "Text",ExpressionUUID->"21a426d0-c09f-42dc-a921-b3d4014c4c37"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,196 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8998,        188]
+NotebookOptionsPosition[      8211,        167]
+NotebookOutlinePosition[      8637,        184]
+CellTagsIndexPosition[      8594,        181]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Cs/Math 371 Ernst/Ziegler\t\tSpring 2021
+Project Proposal Guidelines\
+\>", "Section",
+ CellChangeTimes->{{3.571673533466316*^9, 3.571673552078235*^9}, {
+   3.603153173670656*^9, 3.603153175230746*^9}, {3.6344409720240655`*^9, 
+   3.634440972224066*^9}, {3.6971963816442757`*^9, 3.697196386694381*^9}, {
+   3.7289909686721153`*^9, 3.7289909717654953`*^9}, {3.761260664446905*^9, 
+   3.761260664776924*^9}, {3.7926314054822273`*^9, 3.792631405776219*^9}, {
+   3.7933764727123203`*^9, 3.793376530963411*^9}, 3.8235320657161703`*^9},
+ TextAlignment->Center,ExpressionUUID->"8d979eb4-d264-4e5a-801f-7e6418a9a189"],
+
+Cell[TextData[StyleBox["Project proposal requirements",
+ FontSize->14,
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.5716765254807816`*^9, 3.5716765297240086`*^9}},
+ TextAlignment->Center,ExpressionUUID->"a6031781-e4da-47b8-b2d3-45f1313afe61"],
+
+Cell[TextData[{
+ "The project development must ",
+ StyleBox["follow an ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["incremental approach",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ ", that is, you should be able to develop a running simple version of your \
+project and then add to it as time and progress permits. This is better than \
+not having anything running until the very end (or even later). You need to \
+consider this when selecting your project topic and include this in your \
+project proposal. \n        \n1) Short project description\n      Provide a \
+short 2 - 3 sentence description which describe the topic and scope of your \
+project. \n2) Describe the",
+ StyleBox[" final product you plan to turn in",
+  FontWeight->"Bold"],
+ ". Describe ",
+ StyleBox["what",
+  FontWeight->"Bold"],
+ " your project will actually do (not how). This description must include \
+among other details : \n\ta. What can be seen on the screen? This must \
+include several diagrams to support your explanation (the diagrams may be \
+drawn by hand for the proposal)\n\tb. How does the user influence what \
+happens or how does the user interact with the project?\nIn other words, we \
+want to hear WHAT your project does, how it looks to a user. At this point we \
+are not interested in how that' s accomplished. However, you should spend \
+time to see whether what you propose is feasible. Because once your topic is \
+approved you are stuck with making it work.\nIf you plan to start with/use \
+existing software, you must include a short description of what that software \
+does and a link to it. Regardless of whether you include external code, your \
+work for the project must include significant code you developed on your own. \
+\n3) An outline of what the ",
+ StyleBox["first increment",
+  FontWeight->"Bold"],
+ " of the project includes and then at least",
+ StyleBox[" two more increments",
+  FontWeight->"Bold"],
+ ". Make sure that you allow for enough difficulty in the project, since that \
+affects the grading. \n\nIf these proposal requirements do not fit what you \
+want to do for your project, talk to us for an idea of how we suggest you \
+should proceed. Maybe providing and explaining several diagrams of what can \
+be seen on screen might help you develop details."
+}], "Text",
+ CellChangeTimes->{{3.5716765127510996`*^9, 3.571676522516762*^9}, {
+   3.5716766092905188`*^9, 3.571676642369536*^9}, {3.5716766821663914`*^9, 
+   3.571676794549512*^9}, {3.5716768940167494`*^9, 3.5716770126047153`*^9}, {
+   3.5716770448355217`*^9, 3.571677077003928*^9}, {3.5716771074739237`*^9, 
+   3.5716771907784576`*^9}, {3.571704974627037*^9, 3.571705011668179*^9}, 
+   3.6031536796785984`*^9, {3.6055850324539795`*^9, 3.6055851181948833`*^9}, {
+   3.761262271639676*^9, 3.761262272069677*^9}, {3.761262304855399*^9, 
+   3.7612623383413143`*^9}, {3.7933766213276887`*^9, 
+   3.7933766216954703`*^9}, {3.79337700347943*^9, 3.7933770186858807`*^9}, {
+   3.8235998708606377`*^9, 
+   3.823599876380787*^9}},ExpressionUUID->"6cc7b4f4-544e-400b-b3ae-\
+4bd360bb8bc7"],
+
+Cell[TextData[{
+ StyleBox["Games as projects?",
+  FontWeight->"Bold"],
+ " We want to curb the use of games for projects a bit this year. This does \
+not mean that games are not acceptable, but you need to convince us that your \
+game contains enough aspects which make it suitable for a project in a \
+300-level honors course related to computational problem-solving. You can do \
+that by addressing the different types of computational/problem-solving tasks \
+which must be solved. (Also read again the comments about games in the \
+\[OpenCurlyQuote]Good project selection\[CloseCurlyQuote] document on \
+blackboard.)"
+}], "Text",
+ CellChangeTimes->{{3.5716772020261297`*^9, 3.5716772250674777`*^9}, 
+   3.603153793859129*^9, {3.697807255092724*^9, 3.697807261388472*^9}, {
+   3.7612623843246546`*^9, 
+   3.7612624209888773`*^9}},ExpressionUUID->"35c61447-7fcd-4826-bc4a-\
+a735d4a29a38"],
+
+Cell[TextData[{
+ StyleBox["Database access as projects?",
+  FontWeight->"Bold"],
+ " In the past students suggested projects which allow a user to search \
+through  <some data items>  based on <some criteria> and which display the \
+<data items which match the criteria>.  The information about the  <data \
+items> is usually saved in files created by the students working on the \
+project. It turns out that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " has some powerful functions to do the search if it involves text, and \
+students often struggled with finding good increments for their projects. So \
+if you are interested in something like that ",
+ StyleBox["you must be creative and add various interactions the user might \
+have with the displayed items",
+  FontWeight->"Bold"],
+ " (other than looking, reading, and listening). Furthermore, you should not \
+need to spend a considerable amount of time collecting data (that is not \
+\[OpenCurlyQuote]computationally challenging\[CloseCurlyQuote]).\n\n",
+ StyleBox["Research as projects?",
+  FontWeight->"Bold"],
+ " If you are engaged in student research with a faculty member then ask \
+her/him if there is something (useful to the research project) that can be \
+done with ",
+ StyleBox["Mathematica.",
+  FontSlant->"Italic"],
+ " We encourage you to pursue this avenue! \nHowever there are several \
+stipulations:\n- The faculty mentor needs to agree to guide and help you, \
+this does not mean the faculty mentor needs to understand ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " - but she/he needs to give you feedback and guidance on what you are \
+doing. We do not know the different areas of research and cannot help with \
+questions were expertise in the research area is required. We can only \
+provide expertise that is directly related to coding. \n- If the faculty \
+mentor provides you with code to get started you need to disclose that and \
+clearly state what was given to you. Remember your project must contain \
+something you develop on your own.\n- If your faculty mentor has questions \
+about this, tell us and we will talk to the faculty member.",
+ StyleBox["\n",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.5716772020261297`*^9, 3.5716772475482216`*^9}, {
+   3.5716772836468534`*^9, 3.5716774083112526`*^9}, 3.5716774488247128`*^9, {
+   3.5716775057650776`*^9, 3.571677718088439*^9}, 3.5716811481196175`*^9, {
+   3.5717050671787043`*^9, 3.571705501693078*^9}, {3.57170561380882*^9, 
+   3.5717056225042048`*^9}, 3.571707079137022*^9, {3.571707115899591*^9, 
+   3.571707141684608*^9}, 3.571744759330772*^9, {3.603153820674663*^9, 
+   3.603153824502882*^9}, {3.761262439119914*^9, 
+   3.7612624830570993`*^9}},ExpressionUUID->"3ec69e69-2b63-4c26-a3aa-\
+9743cecd458b"]
+}, Open  ]]
+},
+WindowSize->{949, 467},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"7896be8d-8731-445d-98f9-99ce849973c8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 618, 10, 214, "Section",ExpressionUUID->"8d979eb4-d264-4e5a-801f-7e6418a9a189"],
+Cell[1201, 34, 250, 4, 49, "Text",ExpressionUUID->"a6031781-e4da-47b8-b2d3-45f1313afe61"],
+Cell[1454, 40, 3076, 54, 1025, "Text",ExpressionUUID->"6cc7b4f4-544e-400b-b3ae-4bd360bb8bc7"],
+Cell[4533, 96, 888, 16, 219, "Text",ExpressionUUID->"35c61447-7fcd-4826-bc4a-a735d4a29a38"],
+Cell[5424, 114, 2771, 50, 755, "Text",ExpressionUUID->"3ec69e69-2b63-4c26-a3aa-9743cecd458b"]
+}, Open  ]]
+}
+]
+*)
+
