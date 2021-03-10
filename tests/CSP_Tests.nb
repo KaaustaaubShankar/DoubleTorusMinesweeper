@@ -10,78 +10,87 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    157181,       4694]
-NotebookOptionsPosition[    155786,       4661]
-NotebookOutlinePosition[    156188,       4677]
-CellTagsIndexPosition[    156145,       4674]
+NotebookDataLength[     59109,       1696]
+NotebookOptionsPosition[     56924,       1650]
+NotebookOutlinePosition[     57350,       1667]
+CellTagsIndexPosition[     57307,       1664]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{
-  RowBox[{"generateRandomEq", "[", 
-   RowBox[{"numVars_", ",", "equate_"}], "]"}], ":=", 
-  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
    RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"maxVars", "=", 
-       RowBox[{"RandomInteger", "[", 
-        RowBox[{"{", 
-         RowBox[{"1", ",", 
-          RowBox[{"Min", "[", 
-           RowBox[{"numVars", ",", "8"}], "]"}]}], "}"}], "]"}]}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{"possibleVars", "=", 
-       RowBox[{"Table", "[", 
-        RowBox[{
-         SubscriptBox["a", "i"], ",", 
-         RowBox[{"{", 
-          RowBox[{"i", ",", "numVars"}], "}"}]}], "]"}]}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{"toSum", "=", 
-       RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
-      RowBox[{"nextAdd", "=", 
-       RowBox[{"-", "1"}]}]}], "\[IndentingNewLine]", "}"}], ",", 
-    "\[IndentingNewLine]", 
+   "Generate", " ", "a", " ", "random", " ", "equation", " ", "with", " ", 
+    "vars", " ", "ranging", " ", "from", " ", 
+    SubscriptBox["a", "1"], " ", "to", " ", 
+    SubscriptBox["a", "numVars"]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"generateRandomEq", "[", 
+    RowBox[{"numVars_", ",", "equate_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
     RowBox[{
-     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+     RowBox[{"{", 
       RowBox[{
-       RowBox[{
-        RowBox[{"nextAdd", "=", 
-         RowBox[{"RandomChoice", "[", "possibleVars", "]"}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"While", "[", 
-         RowBox[{
-          RowBox[{"MemberQ", "[", 
-           RowBox[{"toSum", ",", "nextAdd"}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"nextAdd", "=", 
-            RowBox[{"RandomChoice", "[", "possibleVars", "]"}]}], ";"}]}], 
-         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-        RowBox[{"AppendTo", "[", 
-         RowBox[{"toSum", ",", "nextAdd"}], "]"}]}], "\[IndentingNewLine]", 
-       ",", "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{"i", ",", "1", ",", "maxVars"}], "}"}]}], 
-      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"Return", "[", 
-      RowBox[{
-       RowBox[{"Sum", "[", 
-        RowBox[{"addend", ",", 
+       RowBox[{"maxVars", "=", 
+        RowBox[{"RandomInteger", "[", 
          RowBox[{"{", 
-          RowBox[{"addend", ",", "toSum"}], "}"}]}], "]"}], "\[Equal]", 
-       RowBox[{"Min", "[", 
+          RowBox[{"1", ",", 
+           RowBox[{"Min", "[", 
+            RowBox[{"numVars", ",", "8"}], "]"}]}], "}"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"possibleVars", "=", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          SubscriptBox["a", "i"], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "numVars"}], "}"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"toSum", "=", 
+        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"nextAdd", "=", 
+        RowBox[{"-", "1"}]}]}], "\[IndentingNewLine]", "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Do", "[", "\[IndentingNewLine]", 
+       RowBox[{
         RowBox[{
-         RowBox[{"Length", "@", "toSum"}], ",", "equate"}], "]"}]}], "]"}], 
-     ";"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+         RowBox[{"nextAdd", "=", 
+          RowBox[{"RandomChoice", "[", "possibleVars", "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"While", "[", 
+          RowBox[{
+           RowBox[{"MemberQ", "[", 
+            RowBox[{"toSum", ",", "nextAdd"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"nextAdd", "=", 
+             RowBox[{"RandomChoice", "[", "possibleVars", "]"}]}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"toSum", ",", "nextAdd"}], "]"}]}], "\[IndentingNewLine]", 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "maxVars"}], "}"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{
+        RowBox[{"Sum", "[", 
+         RowBox[{"addend", ",", 
+          RowBox[{"{", 
+           RowBox[{"addend", ",", "toSum"}], "}"}]}], "]"}], "\[Equal]", 
+        RowBox[{"Min", "[", 
+         RowBox[{
+          RowBox[{"Length", "@", "toSum"}], ",", "equate"}], "]"}]}], "]"}], 
+      ";"}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.8243429004661674`*^9, 3.824342957524212*^9}, {
   3.8243430831851363`*^9, 3.824343331838483*^9}, {3.8243433665894947`*^9, 
-  3.8243434584588428`*^9}, {3.8243436287680864`*^9, 3.824343645053824*^9}},
- CellLabel->"In[18]:=",ExpressionUUID->"12c91841-4a28-4e7f-83e9-991c320cd503"],
+  3.8243434584588428`*^9}, {3.8243436287680864`*^9, 3.824343645053824*^9}, {
+  3.824352143202511*^9, 
+  3.824352158137148*^9}},ExpressionUUID->"12c91841-4a28-4e7f-83e9-\
+991c320cd503"],
 
 Cell[CellGroupData[{
 
@@ -129,33 +138,42 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"generateRandomCSP", "[", 
-   RowBox[{"numVars_", ",", "numEq_"}], "]"}], ":=", 
-  RowBox[{"Join", "@@", "\[IndentingNewLine]", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Generate", " ", "a", " ", "random", " ", "constraint", " ", 
+    "satisfaction", " ", "problem", " ", "with", " ", "vars", " ", "ranging", 
+    " ", "from", " ", 
+    SubscriptBox["a", "1"], " ", "to", " ", 
+    SubscriptBox["a", "numVars"]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"generateRandomCSP", "[", 
+    RowBox[{"numVars_", ",", "numEq_"}], "]"}], ":=", 
+   RowBox[{"Join", "@@", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Table", "[", 
        RowBox[{
         RowBox[{
-         SubscriptBox["a", "i"], "\[Equal]", "1"}], "||", 
-        RowBox[{
-         SubscriptBox["a", "i"], "\[Equal]", "0"}]}], ",", 
-       RowBox[{"{", 
-        RowBox[{"i", ",", "numVars"}], "}"}]}], "]"}], ",", 
-     "\[IndentingNewLine]", 
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"generateRandomEq", "[", 
-        RowBox[{"numVars", ",", 
-         RowBox[{"RandomInteger", "[", 
-          RowBox[{"{", 
-           RowBox[{"1", ",", "8"}], "}"}], "]"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"i", ",", "numEq"}], "}"}]}], "]"}]}], "}"}]}]}]], "Input",
+         RowBox[{
+          SubscriptBox["a", "i"], "\[Equal]", "1"}], "||", 
+         RowBox[{
+          SubscriptBox["a", "i"], "\[Equal]", "0"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "numVars"}], "}"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"generateRandomEq", "[", 
+         RowBox[{"numVars", ",", 
+          RowBox[{"RandomInteger", "[", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "8"}], "}"}], "]"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "numEq"}], "}"}]}], "]"}]}], "}"}]}]}]}]], "Input",
  InitializationCell->True,
- CellChangeTimes->{{3.824344006437115*^9, 
-  3.8243440454274406`*^9}},ExpressionUUID->"97bb4ae6-0734-4eeb-acd5-\
+ CellChangeTimes->{{3.824344006437115*^9, 3.8243440454274406`*^9}, {
+  3.8243521624247036`*^9, 
+  3.8243521923837996`*^9}},ExpressionUUID->"97bb4ae6-0734-4eeb-acd5-\
 dd46e67773e2"],
 
 Cell[CellGroupData[{
@@ -167,7 +185,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.8243436913340535`*^9, 3.824343710430664*^9}, {
   3.824343807346695*^9, 3.8243438238710127`*^9}, {3.824343897605278*^9, 
   3.824343924978941*^9}, {3.824344055979349*^9, 3.824344088833726*^9}},
- CellLabel->"In[67]:=",ExpressionUUID->"35fc6362-821b-416e-9b6d-acdef0acf1fb"],
+ CellLabel->"In[3]:=",ExpressionUUID->"35fc6362-821b-416e-9b6d-acdef0acf1fb"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -253,48 +271,54 @@ Cell[BoxData[
     RowBox[{
      SubscriptBox["a", "16"], "\[Equal]", "0"}]}], ",", 
    RowBox[{
+    SubscriptBox["a", "13"], "\[Equal]", "1"}], ",", 
+   RowBox[{
     RowBox[{
+     SubscriptBox["a", "4"], "+", 
+     SubscriptBox["a", "10"]}], "\[Equal]", "2"}], ",", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["a", "1"], "+", 
+     SubscriptBox["a", "5"], "+", 
      SubscriptBox["a", "8"], "+", 
-     SubscriptBox["a", "10"]}], "\[Equal]", "1"}], ",", 
+     SubscriptBox["a", "12"], "+", 
+     SubscriptBox["a", "13"], "+", 
+     SubscriptBox["a", "14"], "+", 
+     SubscriptBox["a", "15"]}], "\[Equal]", "1"}], ",", 
    RowBox[{
     RowBox[{
      SubscriptBox["a", "1"], "+", 
      SubscriptBox["a", "2"], "+", 
-     SubscriptBox["a", "16"]}], "\[Equal]", "3"}], ",", 
-   RowBox[{
-    RowBox[{
-     SubscriptBox["a", "2"], "+", 
      SubscriptBox["a", "6"], "+", 
      SubscriptBox["a", "8"], "+", 
+     SubscriptBox["a", "11"], "+", 
      SubscriptBox["a", "12"], "+", 
-     SubscriptBox["a", "15"]}], "\[Equal]", "5"}], ",", 
-   RowBox[{
-    RowBox[{
-     SubscriptBox["a", "2"], "+", 
-     SubscriptBox["a", "7"], "+", 
-     SubscriptBox["a", "12"]}], "\[Equal]", "3"}]}], "}"}]], "Output",
+     SubscriptBox["a", "15"], "+", 
+     SubscriptBox["a", "16"]}], "\[Equal]", "3"}]}], "}"}]], "Output",
  CellChangeTimes->{{3.8243436949925475`*^9, 3.824343716647507*^9}, 
    3.8243437565350947`*^9, {3.824343808037916*^9, 3.824343824205472*^9}, 
    3.82434386279874*^9, {3.824343899058257*^9, 3.824343925786772*^9}, {
    3.824343996696307*^9, 3.824344028290971*^9}, {3.824344058356414*^9, 
-   3.824344115072098*^9}},
- CellLabel->"Out[67]=",ExpressionUUID->"1c9a3f43-b76b-4c7d-8ed5-d839e3389151"]
+   3.824344115072098*^9}, 3.824351432546337*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"51f0e074-2a81-4a2a-aa7c-4c80fc0c24a8"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Solve", "[", 
-  RowBox[{"eqsCSP", ",", 
-   RowBox[{"Table", "[", 
-    RowBox[{
-     SubscriptBox["a", "i"], ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "16"}], "}"}]}], "]"}]}], "]"}]], "Input",
+ RowBox[{"res", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{"eqsCSP", ",", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      SubscriptBox["a", "i"], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "16"}], "}"}]}], "]"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.824343696688368*^9, 3.8243437762160273`*^9}, {
   3.8243438548970547`*^9, 3.824343860371905*^9}, {3.8243439036169806`*^9, 
-  3.8243439036710386`*^9}, {3.8243440738696313`*^9, 3.824344090879422*^9}},
- CellLabel->"In[68]:=",ExpressionUUID->"a94b8f27-07e2-4ecc-8d2a-d245ba5f0574"],
+  3.8243439036710386`*^9}, {3.8243440738696313`*^9, 3.824344090879422*^9}, {
+  3.824351470722934*^9, 3.8243514713667507`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"a94b8f27-07e2-4ecc-8d2a-d245ba5f0574"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -302,3137 +326,9 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "2"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -3444,267 +340,199 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "2"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "2"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "2"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "2"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "2"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "2"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -3714,31 +542,31 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "2"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
@@ -3748,97 +576,97 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "6"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "6"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -3846,135 +674,67 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "6"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
-     RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "6"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -3984,31 +744,31 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "6"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4018,99 +778,99 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "6"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "6"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "6"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4118,33 +878,33 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4152,101 +912,101 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4260,27 +1020,27 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4294,95 +1054,95 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4390,33 +1150,33 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
+      SubscriptBox["a", "16"], "\[Rule]", "0"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4424,101 +1184,101 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
+      SubscriptBox["a", "16"], "\[Rule]", "0"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
+      SubscriptBox["a", "16"], "\[Rule]", "0"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "5"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "9"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
+      SubscriptBox["a", "16"], "\[Rule]", "0"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4532,27 +1292,27 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
+      SubscriptBox["a", "16"], "\[Rule]", "0"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
@@ -4566,101 +1326,331 @@ Cell[BoxData[
      RowBox[{
       SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
+      SubscriptBox["a", "16"], "\[Rule]", "0"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}], ",", 
+      SubscriptBox["a", "16"], "\[Rule]", "0"}]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
      RowBox[{
-      SubscriptBox["a", "1"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "1"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "2"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "3"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "4"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "4"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "5"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "6"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "7"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "7"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "8"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "8"], "\[Rule]", "0"}], ",", 
      RowBox[{
       SubscriptBox["a", "9"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "10"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "10"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "11"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "11"], "\[Rule]", "1"}], ",", 
      RowBox[{
-      SubscriptBox["a", "12"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "12"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "13"], "\[Rule]", "0"}], ",", 
+      SubscriptBox["a", "13"], "\[Rule]", "1"}], ",", 
      RowBox[{
       SubscriptBox["a", "14"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "15"], "\[Rule]", "1"}], ",", 
+      SubscriptBox["a", "15"], "\[Rule]", "0"}], ",", 
      RowBox[{
-      SubscriptBox["a", "16"], "\[Rule]", "1"}]}], "}"}]}], "}"}]], "Output",
+      SubscriptBox["a", "16"], "\[Rule]", "0"}]}], "}"}]}], "}"}]], "Output",
  CellChangeTimes->{{3.82434370093229*^9, 3.8243437175746975`*^9}, {
    3.8243437526326103`*^9, 3.824343777332569*^9}, {3.824343808876403*^9, 
    3.824343812973768*^9}, 3.8243438459310937`*^9, {3.824343894397778*^9, 
    3.8243439267801113`*^9}, {3.8243439978133025`*^9, 
-   3.8243440290738297`*^9}, {3.8243440619319067`*^9, 3.824344115813143*^9}},
- CellLabel->"Out[68]=",ExpressionUUID->"b86fa6fe-bef4-4a14-843f-848205d468a1"]
-}, Open  ]]
+   3.8243440290738297`*^9}, {3.8243440619319067`*^9, 3.824344115813143*^9}, 
+   3.824351434231333*^9, 3.8243514720620337`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"c2603eac-e99c-4fdc-8e5f-d244d58f562b"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Analyze", " ", "the", " ", "CSP", " ", "solution"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"analyzeCSPSolution", "[", "cspRes_", "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"all0", "=", 
+        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"all1", "=", 
+        RowBox[{"{", "}"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Length", "@", "cspRes"}], "\[Equal]", "0"}], ",", 
+        RowBox[{"Return", "[", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"all0", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"True", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{
+           "cspRes", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
+           "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"all1", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"True", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{
+           "cspRes", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}],
+           "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Do", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+          "all0", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "=", 
+          RowBox[{
+           RowBox[{
+           "all0", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "&&", 
+           RowBox[{
+            RowBox[{
+            "solution", "\[LeftDoubleBracket]", "i", 
+             "\[RightDoubleBracket]"}], "\[Equal]", "0"}]}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+          "all1", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "=", 
+          RowBox[{
+           RowBox[{
+           "all1", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], "&&", 
+           RowBox[{
+            RowBox[{
+            "solution", "\[LeftDoubleBracket]", "i", 
+             "\[RightDoubleBracket]"}], "\[Equal]", "1"}]}]}]}], 
+        "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"solution", ",", "cspRes"}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Length", "[", "solution", "]"}]}], "}"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+             "all0", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+             ",", "i", ",", "Nothing"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"Length", "[", "all0", "]"}]}], "}"}]}], "]"}], ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+             "all1", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+             ",", "i", ",", "Nothing"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"Length", "[", "all1", "]"}]}], "}"}]}], "]"}]}], "}"}], 
+       "]"}]}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.824351669702416*^9, 3.8243519989326935`*^9}, {
+  3.8243521957717943`*^9, 3.8243522179423532`*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"dae83bb9-e308-4351-9b17-cf9926364cc6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"finalCSP", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         SubscriptBox["a", "i"], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "16"}], "}"}]}], "]"}], "/.", "#"}], 
+      "&"}], ",", "res"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "@", "finalCSP"}]}], "Input",
+ CellChangeTimes->{{3.824351402221856*^9, 3.824351553767614*^9}, {
+  3.8243516176931887`*^9, 3.824351618906704*^9}, {3.8243520131010065`*^9, 
+  3.8243520197169323`*^9}, {3.824352059089395*^9, 3.8243520615239906`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"667fb27a-95a7-4f87-b6bd-eac6d874ba9e"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"0", "0", "1", "1", "0", "1", "1", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "0", "0", "1", "0", "1", "1", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "0", "1", "1", "0", "1", "0", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "0", "0", "1", "0", "1", "0", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "0", "1", "1", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "0", "0", "1", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "0", "1", "1", "0", "1", "0", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "0", "0", "1", "0", "1", "0", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "0", "1", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "0", "1", "0", "0", "1", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "0", "0", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "0", "1", "0", "0", "0", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "0", "1", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "0", "1", "0", "0", "1", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "0", "0", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "0", "1", "0", "0", "0", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "1", "1", "0", "1", "1", "0", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "0", "1", "0", "1", "1", "0", "1", "1", "0", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "0", "1", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "1", "1", "0", "0", "1", "0", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "0", "1", "0", "1", "1", "0", "0", "1", "0", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "1", "0", "0", "0", "1", "0", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "0", "1", "0", "1", "0", "0", "0", "1", "0", "0", "1", "0", 
+     "0", "1"},
+    {"0", "1", "1", "1", "0", "1", "1", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "0"},
+    {"0", "1", "0", "1", "0", "1", "1", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "0"},
+    {"0", "1", "1", "1", "0", "1", "0", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "0"},
+    {"0", "1", "0", "1", "0", "1", "0", "0", "1", "1", "1", "0", "1", "0", 
+     "0", "0"},
+    {"0", "1", "1", "1", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "0"},
+    {"0", "1", "0", "1", "0", "1", "1", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "0"},
+    {"0", "1", "1", "1", "0", "1", "0", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "0"},
+    {"0", "1", "0", "1", "0", "1", "0", "0", "0", "1", "1", "0", "1", "0", 
+     "0", "0"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{
+  3.824351554126937*^9, 3.8243516193131123`*^9, {3.824352014142587*^9, 
+   3.82435202003054*^9}, 3.824352061780658*^9, 3.8243522375312033`*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"920267cb-b63c-445a-b7f5-b895a43f93eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"analyzeCSPSolution", "[", "finalCSP", "]"}]], "Input",
+ CellChangeTimes->{{3.8243520406080313`*^9, 3.824352045842335*^9}, {
+  3.8243522425883365`*^9, 3.824352243882044*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"6ec27f51-73b4-45fd-9d30-15bf40da2adc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "5", ",", "8", ",", "12", ",", "14", ",", "15"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "10", ",", "13"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.824352046072531*^9, 3.824352244122254*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"07570134-25c8-4f58-a3de-7a325a1d4e58"]
+}, Open  ]],
+
+Cell["\<\
+No mines at the tiles represented by {1,5,8,12,14,15} and definitely mines at \
+the tiles represented by {4,10,13}\
+\>", "Text",
+ CellChangeTimes->{{3.824352334836673*^9, 
+  3.824352366238491*^9}},ExpressionUUID->"15fef93f-9dc2-487c-873d-\
+deedf66cef97"],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.8243521184133463`*^9, 
+  3.8243521215303817`*^9}},ExpressionUUID->"8635841f-b7e1-4a5d-8df7-\
+efcc2edb27c7"]
 },
-WindowSize->{960, 478},
-WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
+WindowToolbars->"EditBar",
+WindowSize->{949., 472.5},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"1734767b-8d8c-4967-8a43-91489c0d24b5"
@@ -4676,26 +1666,38 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 2511, 63, 355, "Input",ExpressionUUID->"12c91841-4a28-4e7f-83e9-991c320cd503",
+Cell[558, 20, 2876, 72, 374, "Input",ExpressionUUID->"12c91841-4a28-4e7f-83e9-991c320cd503",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3094, 87, 444, 7, 28, "Input",ExpressionUUID->"ddb1ff63-36e2-440a-b56d-2b81105510b3"],
-Cell[3541, 96, 367, 9, 32, "Output",ExpressionUUID->"6bc13a40-5c02-4a15-ae05-311b04261fe3"]
+Cell[3459, 96, 444, 7, 28, "Input",ExpressionUUID->"ddb1ff63-36e2-440a-b56d-2b81105510b3"],
+Cell[3906, 105, 367, 9, 32, "Output",ExpressionUUID->"6bc13a40-5c02-4a15-ae05-311b04261fe3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3945, 110, 294, 5, 28, "Input",ExpressionUUID->"57658580-3d30-45b8-823a-9e418d5cffa8"],
-Cell[4242, 117, 366, 9, 32, "Output",ExpressionUUID->"9d366d49-7a1d-45bc-938c-ba6648f9822e"]
+Cell[4310, 119, 294, 5, 28, "Input",ExpressionUUID->"57658580-3d30-45b8-823a-9e418d5cffa8"],
+Cell[4607, 126, 366, 9, 32, "Output",ExpressionUUID->"9d366d49-7a1d-45bc-938c-ba6648f9822e"]
 }, Open  ]],
-Cell[4623, 129, 1013, 29, 84, "Input",ExpressionUUID->"97bb4ae6-0734-4eeb-acd5-dd46e67773e2",
+Cell[4988, 138, 1412, 38, 103, "Input",ExpressionUUID->"97bb4ae6-0734-4eeb-acd5-dd46e67773e2",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[5661, 162, 416, 7, 28, "Input",ExpressionUUID->"35fc6362-821b-416e-9b6d-acdef0acf1fb"],
-Cell[6080, 171, 3487, 109, 72, "Output",ExpressionUUID->"1c9a3f43-b76b-4c7d-8ed5-d839e3389151"]
+Cell[6425, 180, 415, 7, 28, "Input",ExpressionUUID->"35fc6362-821b-416e-9b6d-acdef0acf1fb"],
+Cell[6843, 189, 3672, 113, 91, "Output",ExpressionUUID->"51f0e074-2a81-4a2a-aa7c-4c80fc0c24a8"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9604, 285, 532, 11, 28, "Input",ExpressionUUID->"a94b8f27-07e2-4ecc-8d2a-d245ba5f0574"],
-Cell[10139, 298, 145631, 4360, 2541, "Output",ExpressionUUID->"b86fa6fe-bef4-4a14-843f-848205d468a1"]
-}, Open  ]]
+Cell[10552, 307, 613, 13, 28, "Input",ExpressionUUID->"a94b8f27-07e2-4ecc-8d2a-d245ba5f0574"],
+Cell[11168, 322, 36816, 1097, 634, "Output",ExpressionUUID->"c2603eac-e99c-4fdc-8e5f-d244d58f562b"]
+}, Open  ]],
+Cell[47999, 1422, 3719, 96, 336, "Input",ExpressionUUID->"dae83bb9-e308-4351-9b17-cf9926364cc6",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[51743, 1522, 714, 17, 48, "Input",ExpressionUUID->"667fb27a-95a7-4f87-b6bd-eac6d874ba9e"],
+Cell[52460, 1541, 3343, 73, 564, "Output",ExpressionUUID->"920267cb-b63c-445a-b7f5-b895a43f93eb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55840, 1619, 276, 4, 28, "Input",ExpressionUUID->"6ec27f51-73b4-45fd-9d30-15bf40da2adc"],
+Cell[56119, 1625, 373, 9, 32, "Output",ExpressionUUID->"07570134-25c8-4f58-a3de-7a325a1d4e58"]
+}, Open  ]],
+Cell[56507, 1637, 264, 6, 34, "Text",ExpressionUUID->"15fef93f-9dc2-487c-873d-deedf66cef97"],
+Cell[56774, 1645, 146, 3, 34, "Text",ExpressionUUID->"8635841f-b7e1-4a5d-8df7-efcc2edb27c7"]
 }
 ]
 *)
