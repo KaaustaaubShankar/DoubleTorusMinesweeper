@@ -8,3 +8,4 @@ List of properties (tentative):
 
  * Tile type
  * Neighbor indices
+ * Tile point positions
