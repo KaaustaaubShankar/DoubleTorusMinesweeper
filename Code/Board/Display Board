@@ -1,0 +1,11 @@
+So we work out section 1 ,the topmost one, using points as a way to make triangle primtives. 
+
+We can calculate the points using zigzag method relying on sides
+
+Fill in values for that section and copy it 7 more times
+
+Run through lst from boardsetup and fill in triangles with appropriate color
+
+Think about how to fill up triangle object with numbers
+
+-Kaaustaaub Shankar Log from March 10
