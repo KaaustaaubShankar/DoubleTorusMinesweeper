@@ -12,6 +12,6 @@ Think about how to fill up triangle object with numbers
 
 
 We have sectioned out the octagan so thats good. We have also added numbers to the numbered tiles signifyfing on 
-how many mines are next to it.
+how many mines are next to it. We also now have a method for showing which neighbors are marked as empty tiles
 
 -Kaaustaaub Shankar Log From March 11
