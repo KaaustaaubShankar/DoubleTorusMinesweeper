@@ -15,3 +15,11 @@ We have sectioned out the octagan so thats good. We have also added numbers to t
 how many mines are next to it. We also now have a method for showing which neighbors are marked as empty tiles
 
 -Kaaustaaub Shankar Log From March 11
+
+We now have tokens to for all of our indexes and values to make our code a little bit easier to change and readable.
+We are planning on getting rid of the extra lists since they are independent of whether it is a mine or not.
+We now have to get rid of the 0's in the mines and implement the torus neighbor detection which should be real quick
+We also have to add mines that dont have text sine they dont have texts and the reveal token
+
+-Kaaustaaub Shankar Log From March 12
+
