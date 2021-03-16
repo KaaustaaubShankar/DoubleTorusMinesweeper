@@ -1,0 +1,329 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10899,        321]
+NotebookOptionsPosition[      9638,        289]
+NotebookOutlinePosition[     10062,        306]
+CellTagsIndexPosition[     10019,        303]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["revealTile", "Subsubsection",
+ CellChangeTimes->{{3.8248609487605686`*^9, 
+  3.8248609616016183`*^9}},ExpressionUUID->"d0a425f3-4d9b-43a1-93f9-\
+b4409a65cef2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"revealTile", "[", "tileIndex_", "]"}], ":="}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.824860922604348*^9, 
+  3.824860947204028*^9}},ExpressionUUID->"909f3243-7575-43ef-afe6-\
+1bd6e2e24a34"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["triangleAtPoint", "Subsubsection",
+ CellChangeTimes->{{3.8248609803290997`*^9, 
+  3.8248609880789576`*^9}},ExpressionUUID->"3e717d65-8c96-4345-a670-\
+d5eb082bcf30"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Helper", " ", "function", " ", "tofigure", " ", "out", " ", "which", " ", 
+    "sector", " ", "the", " ", "point", " ", "is", " ", "in"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"whichSector", "[", 
+    RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"curPoint", "=", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y"}], "}"}]}], ",", 
+       RowBox[{"\[Theta]", "=", 
+        FractionBox["\[Pi]", "4"]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"Cot", "[", 
+              FractionBox[
+               RowBox[{"3", "\[Pi]"}], "8"], "]"}]}], 
+            RowBox[{
+            "curPoint", "\[LeftDoubleBracket]", "2", 
+             "\[RightDoubleBracket]"}]}], "<", 
+           RowBox[{
+           "curPoint", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+            "<", 
+           RowBox[{
+            RowBox[{"Cot", "[", 
+             FractionBox[
+              RowBox[{"3", "\[Pi]"}], "8"], "]"}], 
+            RowBox[{
+            "curPoint", "\[LeftDoubleBracket]", "2", 
+             "\[RightDoubleBracket]"}]}]}], ",", 
+          RowBox[{"Return", "[", "i", "]"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"curPoint", "=", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+              RowBox[{"-", 
+               RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Sin", "[", "\[Theta]", "]"}], ",", 
+              RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "}"}]}], "}"}], ".", 
+          "curPoint"}]}]}], "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", "8"}], "}"}]}], "\[IndentingNewLine]", 
+      "]"}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ InitializationCell->
+  True,ExpressionUUID->"e171dc7e-86ec-41cb-b879-76e74a05f662"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Helper", " ", "function", " ", "to", " ", "figure", " ", "out", " ", 
+    "which", " ", "tile", " ", "the", " ", "point", " ", "is", " ", "in", " ",
+     "given", " ", "the", " ", "row"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"findTile", "[", 
+    RowBox[{"row_", ",", "point_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"tempPoint", "=", 
+        RowBox[{"point", "+", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"row", "-", "1"}], ")"}], "*", 
+            RowBox[{"Cos", "[", 
+             RowBox[{"3", 
+              RowBox[{"\[Pi]", "/", "8"}]}], "]"}]}], ",", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{"row", "-", "1"}], ")"}]}], 
+            RowBox[{"Sin", "[", 
+             FractionBox[
+              RowBox[{"3", "\[Pi]"}], "8"], "]"}]}]}], "}"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"checkerEq", "=", 
+        RowBox[{
+         RowBox[{"ArcCos", "[", 
+          RowBox[{"Cos", "[", 
+           RowBox[{
+            RowBox[{"(", "x", ")"}], 
+            RowBox[{"(", 
+             RowBox[{"\[Pi]", "/", 
+              RowBox[{"Cos", "[", 
+               RowBox[{"3", 
+                RowBox[{"\[Pi]", "/", "8"}]}], "]"}]}], ")"}]}], "]"}], "]"}],
+          "*", 
+         RowBox[{
+          RowBox[{"Sin", "[", 
+           RowBox[{"3", 
+            RowBox[{"\[Pi]", "/", "8"}]}], "]"}], "/", "\[Pi]"}]}]}]}], "}"}],
+      ",", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "tempPoint", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+         "<", "checkerEq"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{"x", "\[Rule]", 
+          RowBox[{
+          "tempPoint", "\[LeftDoubleBracket]", "1", 
+           "\[RightDoubleBracket]"}]}], "}"}]}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"Pointing", " ", "up", " ", "triangle"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Return", "[", 
+         RowBox[{"2", "*", 
+          RowBox[{"Ceiling", "[", 
+           RowBox[{
+            RowBox[{
+            "tempPoint", "\[LeftDoubleBracket]", "1", 
+             "\[RightDoubleBracket]"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"2", 
+              RowBox[{"Cos", "[", 
+               RowBox[{"3", 
+                RowBox[{"\[Pi]", "/", "8"}]}], "]"}]}], ")"}]}], "]"}]}], 
+         "]"}], ";"}], "\[IndentingNewLine]", ",", 
+       RowBox[{"(*", 
+        RowBox[{"Pointing", " ", "down", " ", "triangle"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Return", "[", 
+         RowBox[{
+          RowBox[{"2", "*", 
+           RowBox[{"Round", "[", 
+            RowBox[{
+             RowBox[{
+             "tempPoint", "\[LeftDoubleBracket]", "1", 
+              "\[RightDoubleBracket]"}], "/", 
+             RowBox[{"(", 
+              RowBox[{"2", 
+               RowBox[{"Cos", "[", 
+                RowBox[{"3", 
+                 RowBox[{"\[Pi]", "/", "8"}]}], "]"}]}], ")"}]}], "]"}]}], 
+          "+", "1"}], "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+    "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ InitializationCell->
+  True,ExpressionUUID->"eb957970-e4b5-454a-ba32-d1c865bee83b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"triangleAtPoint", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"sector", "=", 
+       RowBox[{"whichSector", "[", 
+        RowBox[{"x", ",", "y"}], "]"}]}], ",", "\[IndentingNewLine]", "row", 
+      ",", "tile", ",", "\[IndentingNewLine]", "checkPoint", ",", 
+      RowBox[{"\[Theta]", "=", 
+       FractionBox["\[Pi]", "4"]}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"checkPoint", "=", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Cos", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"sector", "-", "1"}], ")"}], "\[Theta]"}], "]"}], ",", 
+           RowBox[{"-", 
+            RowBox[{"Sin", "[", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"sector", "-", "1"}], ")"}], "\[Theta]"}], "]"}]}]}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Sin", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"sector", "-", "1"}], ")"}], "\[Theta]"}], "]"}], ",", 
+           RowBox[{"Cos", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"sector", "-", "1"}], ")"}], "\[Theta]"}], "]"}]}], 
+          "}"}]}], "}"}], ".", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"row", "=", 
+      RowBox[{"Ceiling", "[", 
+       RowBox[{
+        RowBox[{
+        "checkPoint", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+        "*", 
+        RowBox[{"Csc", "[", 
+         FractionBox[
+          RowBox[{"3", "\[Pi]"}], "8"], "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"tile", "=", 
+      RowBox[{"findTile", "[", 
+       RowBox[{"row", ",", "checkPoint"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", 
+      RowBox[{"{", 
+       RowBox[{"sector", ",", "row", ",", "tile"}], "}"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->
+  True,ExpressionUUID->"be2076c9-92a7-4d48-b0c4-09e6d1da6ca0"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["toggleFlag", "Subsubsection",
+ CellChangeTimes->{{3.8248610518361416`*^9, 
+  3.8248610534621105`*^9}},ExpressionUUID->"e9a9dfea-6c60-4901-ab2f-\
+5a790cf4ed20"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"toggleFlag", "[", "tileIndex_", "]"}], ":="}]], "Input",
+ CellChangeTimes->{{3.824861054772339*^9, 
+  3.824861065203844*^9}},ExpressionUUID->"c27c76ce-d109-4807-b45a-\
+db7d057ad17d"]
+}, Closed]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{479, 472},
+WindowMargins->{{Automatic, -5}, {Automatic, 0}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"fd56dd56-c1bc-4d8c-96bf-e4c3164a4382"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 165, 3, 44, "Subsubsection",ExpressionUUID->"d0a425f3-4d9b-43a1-93f9-b4409a65cef2"],
+Cell[748, 27, 244, 6, 44, "Input",ExpressionUUID->"909f3243-7575-43ef-afe6-1bd6e2e24a34",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1029, 38, 170, 3, 36, "Subsubsection",ExpressionUUID->"3e717d65-8c96-4345-a670-d5eb082bcf30"],
+Cell[1202, 43, 2305, 63, 362, "Input",ExpressionUUID->"e171dc7e-86ec-41cb-b879-76e74a05f662",
+ InitializationCell->True],
+Cell[3510, 108, 3463, 98, 437, "Input",ExpressionUUID->"eb957970-e4b5-454a-ba32-d1c865bee83b",
+ InitializationCell->True],
+Cell[6976, 208, 2224, 63, 316, "Input",ExpressionUUID->"be2076c9-92a7-4d48-b0c4-09e6d1da6ca0",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9237, 276, 165, 3, 36, "Subsubsection",ExpressionUUID->"e9a9dfea-6c60-4901-ab2f-5a790cf4ed20"],
+Cell[9405, 281, 217, 5, 28, "Input",ExpressionUUID->"c27c76ce-d109-4807-b45a-db7d057ad17d"]
+}, Closed]]
+}
+]
+*)
+
