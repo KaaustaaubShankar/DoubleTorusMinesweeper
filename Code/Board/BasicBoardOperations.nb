@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     35894,        875]
-NotebookOptionsPosition[     33736,        827]
-NotebookOutlinePosition[     34160,        844]
-CellTagsIndexPosition[     34117,        841]
+NotebookDataLength[     36411,        888]
+NotebookOptionsPosition[     34225,        839]
+NotebookOutlinePosition[     34649,        856]
+CellTagsIndexPosition[     34606,        853]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -819,11 +819,23 @@ Cell["toggleFlag", "Subsubsection",
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"toggleFlag", "[", "tileIndex_", "]"}], ":="}]], "Input",
- CellChangeTimes->{{3.824861054772339*^9, 
-  3.824861065203844*^9}},ExpressionUUID->"c27c76ce-d109-4807-b45a-\
+  RowBox[{"toggleFlag", "[", 
+   RowBox[{"board_", ",", "sector_", ",", "row_", ",", "tile_"}], "]"}], ":=",
+   "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"board", "\[LeftDoubleBracket]", 
+    RowBox[{"sector", ",", "row", ",", "tile", ",", "ISFLAGGEDI"}], 
+    "\[RightDoubleBracket]"}], "=", 
+   RowBox[{"!", 
+    RowBox[{"board", "\[LeftDoubleBracket]", 
+     RowBox[{"sector", ",", "row", ",", "tile", ",", "ISFLAGGEDI"}], 
+     "\[RightDoubleBracket]"}]}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.824861054772339*^9, 3.824861065203844*^9}, {
+  3.824929567402809*^9, 
+  3.8249296781991568`*^9}},ExpressionUUID->"c27c76ce-d109-4807-b45a-\
 db7d057ad17d"]
-}, Closed]]
+}, Open  ]]
 },
 WindowToolbars->"EditBar",
 WindowSize->{479, 472},
@@ -875,8 +887,9 @@ Cell[31053, 746, 2245, 63, 316, "Input",ExpressionUUID->"be2076c9-92a7-4d48-b0c4
 }, Closed]],
 Cell[CellGroupData[{
 Cell[33335, 814, 165, 3, 36, "Subsubsection",ExpressionUUID->"e9a9dfea-6c60-4901-ab2f-5a790cf4ed20"],
-Cell[33503, 819, 217, 5, 28, "Input",ExpressionUUID->"c27c76ce-d109-4807-b45a-db7d057ad17d"]
-}, Closed]]
+Cell[33503, 819, 706, 17, 84, "Input",ExpressionUUID->"c27c76ce-d109-4807-b45a-db7d057ad17d",
+ InitializationCell->True]
+}, Open  ]]
 }
 ]
 *)
